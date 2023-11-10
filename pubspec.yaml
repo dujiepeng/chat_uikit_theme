@@ -1,7 +1,7 @@
 name: chat_uikit_theme
-description: A new Flutter package project.
+description: chat uikit theme.
 version: 0.0.1
-homepage:
+homepage: https://github.com/dujiepeng/chat_uikit_theme
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
