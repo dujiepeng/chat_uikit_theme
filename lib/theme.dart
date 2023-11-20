@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:chat_uikit_theme/chat_uikit_theme.dart';
 
-import 'color.dart';
-import 'font.dart';
+import 'package:flutter/material.dart';
 
 class ChatUIKitTheme extends InheritedWidget {
   ChatUIKitTheme({
@@ -10,15 +8,16 @@ class ChatUIKitTheme extends InheritedWidget {
     ChatUIKitFont? font,
     required super.child,
     super.key,
-  })  : color = color ?? ChatUIKitColor.light(),
-        font = font ?? ChatUIKitFont();
+  }) : font = font ?? ChatUIKitFont() {
+    this.color = color ?? ChatUIKitColor.light();
+  }
 
-  final ChatUIKitColor color;
+  late final ChatUIKitColor color;
   final ChatUIKitFont font;
 
-  static ChatUIKitTheme? of(BuildContext context) {
-    final ChatUIKitTheme? theme =
-        context.dependOnInheritedWidgetOfExactType<ChatUIKitTheme>();
+  static ChatUIKitTheme of(BuildContext context) {
+    final ChatUIKitTheme theme =
+        context.dependOnInheritedWidgetOfExactType<ChatUIKitTheme>()!;
     return theme;
   }
 

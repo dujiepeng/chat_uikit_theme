@@ -304,91 +304,91 @@ class ChatUIKitColor {
       .getColor();
 
   Color get barrageColor0 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.0,
       ).getColor();
 
   Color get barrageColor1 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.1,
       ).getColor();
 
   Color get barrageColor2 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.2,
       ).getColor();
 
   Color get barrageColor3 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.3,
       ).getColor();
 
   Color get barrageColor4 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.4,
       ).getColor();
 
   Color get barrageColor5 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.5,
       ).getColor();
 
   Color get barrageColor6 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.6,
       ).getColor();
 
   Color get barrageColor7 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.7,
       ).getColor();
 
   Color get barrageColor8 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.8,
       ).getColor();
 
   Color get barrageColor9 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.9,
       ).getColor();
 
   Color get barrageColor95 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.95,
       ).getColor();
 
   Color get barrageColor98 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 0.98,
       ).getColor();
 
   Color get barrageColor100 => UIKitHSLColor(
-        light: barrageLightness,
+        light: isDark ? LightnessStyle.oneHundred : LightnessStyle.zero,
         hue: 0,
         saturation: 0,
         alpha: 1.0,
