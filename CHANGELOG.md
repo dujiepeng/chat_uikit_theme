@@ -1,3 +1,7 @@
+## 0.0.4
+
+- add get textStyle methods.
+
 ## 0.0.3
 
 - change barrageColor dark mode an light mode.
