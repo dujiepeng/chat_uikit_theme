@@ -3,6 +3,17 @@ import 'package:chat_uikit_theme/chat_uikit_theme.dart';
 import 'package:flutter/material.dart';
 
 class ChatUIKitTheme extends InheritedWidget {
+  static ChatUIKitTheme? _defineTheme;
+
+  static ChatUIKitTheme get _getDefineTheme {
+    _defineTheme ??= ChatUIKitTheme(
+      color: ChatUIKitColor.light(),
+      font: ChatUIKitFont(),
+      child: const SizedBox(),
+    );
+    return _defineTheme!;
+  }
+
   ChatUIKitTheme({
     ChatUIKitColor? color,
     ChatUIKitFont? font,
@@ -16,9 +27,9 @@ class ChatUIKitTheme extends InheritedWidget {
   final ChatUIKitFont font;
 
   static ChatUIKitTheme of(BuildContext context) {
-    final ChatUIKitTheme theme =
-        context.dependOnInheritedWidgetOfExactType<ChatUIKitTheme>()!;
-    return theme;
+    final ChatUIKitTheme? theme =
+        context.dependOnInheritedWidgetOfExactType<ChatUIKitTheme>();
+    return theme ?? _getDefineTheme;
   }
 
   TextStyle bodyExtraSmall({Color? color}) {

@@ -1,3 +1,19 @@
+## 0.0.9
+
+- add default theme.
+
+## 0.0.8
+
+- bug fix;
+
+## 0.0.6
+
+- add font size settings methods.
+
+## 0.0.5
+
+- add font size settings.
+
 ## 0.0.4
 
 - add get textStyle methods.
