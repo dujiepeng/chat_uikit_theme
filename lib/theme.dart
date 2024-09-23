@@ -2,34 +2,41 @@ import 'package:chat_uikit_theme/chat_uikit_theme.dart';
 
 import 'package:flutter/material.dart';
 
-class ChatUIKitTheme extends InheritedWidget {
-  static ChatUIKitTheme? _defineTheme;
+abstract mixin class ChatUIKitTheme {
+  static ChatUIKitThemeImpl? _instance;
 
-  static ChatUIKitTheme get _getDefineTheme {
-    _defineTheme ??= ChatUIKitTheme(
-      color: ChatUIKitColor.light(),
-      font: ChatUIKitFont(),
-      child: const SizedBox(),
-    );
-    return _defineTheme!;
+  static ChatUIKitThemeImpl get instance => _instance ??= ChatUIKitThemeImpl();
+
+  void setColor(ChatUIKitColor color);
+  void setFont(ChatUIKitFont font);
+
+  ChatUIKitColor get color;
+  ChatUIKitFont get font;
+}
+
+class ChatUIKitThemeImpl extends ChangeNotifier with ChatUIKitTheme {
+  ChatUIKitColor? _color = ChatUIKitColor.light();
+  ChatUIKitFont? _font = ChatUIKitFont();
+
+  final _defaultColor = ChatUIKitColor.light();
+  final _defaultFont = ChatUIKitFont();
+
+  @override
+  ChatUIKitColor get color => _color ?? _defaultColor;
+
+  @override
+  ChatUIKitFont get font => _font ?? _defaultFont;
+
+  @override
+  void setColor(ChatUIKitColor color) {
+    _color = color;
+    notifyListeners();
   }
 
-  ChatUIKitTheme({
-    ChatUIKitColor? color,
-    ChatUIKitFont? font,
-    required super.child,
-    super.key,
-  }) : font = font ?? ChatUIKitFont() {
-    this.color = color ?? ChatUIKitColor.light();
-  }
-
-  late final ChatUIKitColor color;
-  final ChatUIKitFont font;
-
-  static ChatUIKitTheme of(BuildContext context) {
-    final ChatUIKitTheme? theme =
-        context.dependOnInheritedWidgetOfExactType<ChatUIKitTheme>();
-    return theme ?? _getDefineTheme;
+  @override
+  void setFont(ChatUIKitFont font) {
+    _font = font;
+    notifyListeners();
   }
 
   TextStyle bodyExtraSmall({Color? color}) {
@@ -142,38 +149,5 @@ class ChatUIKitTheme extends InheritedWidget {
       fontWeight: font.labelLarge.fontWeight,
       color: color,
     );
-  }
-
-  @override
-  bool updateShouldNotify(covariant ChatUIKitTheme oldWidget) {
-    if (color.isDark != oldWidget.color.isDark) {
-      return true;
-    }
-    if (color.errorHue != oldWidget.color.errorHue ||
-        color.primaryHue != oldWidget.color.primaryHue ||
-        color.neutralHue != oldWidget.color.neutralHue ||
-        color.neutralSpecialHue != oldWidget.color.neutralSpecialHue ||
-        color.secondaryHue != oldWidget.color.secondaryHue) {
-      return true;
-    }
-
-    if (font.bodyExtraSmall != oldWidget.font.bodyExtraSmall ||
-        font.bodyMedium != oldWidget.font.bodyMedium ||
-        font.bodySmall != oldWidget.font.bodySmall ||
-        font.bodyLarge != oldWidget.font.bodyLarge ||
-        font.headlineLarge != oldWidget.font.headlineLarge ||
-        font.headlineMedium != oldWidget.font.headlineMedium ||
-        font.headlineSmall != oldWidget.font.headlineSmall ||
-        font.labelExtraSmall != oldWidget.font.labelExtraSmall ||
-        font.labelLarge != oldWidget.font.labelLarge ||
-        font.labelMedium != oldWidget.font.labelMedium ||
-        font.labelSmall != oldWidget.font.labelSmall ||
-        font.titleLarge != oldWidget.font.titleLarge ||
-        font.titleMedium != oldWidget.font.titleMedium ||
-        font.titleSmall != oldWidget.font.titleSmall) {
-      return true;
-    }
-
-    return false;
   }
 }
