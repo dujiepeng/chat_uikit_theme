@@ -1,39 +1,34 @@
 # chat_uikit_theme
 
-Packages that use themes in chat_uikit
-
 ## Getting Started
 
-Needs to be added to the root node, Supports light and dark themes.
+1. If you want to use a theme, you need to implement `ChatUIKitThemeState`
 
 ```dart
-return ChatUIKitTheme(
-    color: isLight ? ChatUIKitColor.light() : ChatUIKitColor.dark(),
-    child: child,
-);
+class _NextWidgetState extends State<NextWidget> with ChatUIKitThemeState {}
 ```
 
-The hue value can be used to change the overall style.
+2. override `themeBuilder` method
 
 ```dart
-class ChatUIKitColor {
-  ChatUIKitColor.light({
-    this.primaryHue = 203,
-    this.secondaryHue = 155,
-    this.errorHue = 350,
-    this.neutralHue = 203,
-    this.neutralSpecialHue = 220,
-    this.barrageLightness = LightnessStyle.oneHundred,
-  }) : isDark = false;
-
-  ChatUIKitColor.dark({
-    this.primaryHue = 203,
-    this.secondaryHue = 155,
-    this.errorHue = 350,
-    this.neutralHue = 203,
-    this.neutralSpecialHue = 220,
-    this.barrageLightness = LightnessStyle.zero,
-  }) : isDark = true;
+// The theme here is the theme after setting, you can take a value. There is no need to override the `build` once `themeBuilder` is used
+Widget themeBuilder(BuildContext context, ChatUIKitTheme theme) {
+// return some widget;
 }
-
 ```
+
+3. Set theme
+   1.  color
+
+    ```dart
+    ChatUIKitTheme.instance.setColor(
+        ChatUIKitColor.light(primaryHue: 203),
+    );
+    ```
+    2. font
+
+    ```dart
+    ChatUIKitTheme.instance.setFont(
+        ChatUIKitFont.fontSize(ChatUIKitFontSize.normal),
+    );
+    ```

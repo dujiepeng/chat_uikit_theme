@@ -32,10 +32,12 @@ class _NextWidgetState extends State<NextWidget> with ChatUIKitThemeState {
               setState(() {
                 if (_counter % 2 == 1) {
                   ChatUIKitTheme.instance.setFont(
-                      ChatUIKitFont.fontSize(ChatUIKitFontSize.normal));
+                    ChatUIKitFont.fontSize(ChatUIKitFontSize.normal),
+                  );
                 } else {
                   ChatUIKitTheme.instance.setFont(
-                      ChatUIKitFont.fontSize(ChatUIKitFontSize.superLarge));
+                    ChatUIKitFont.fontSize(ChatUIKitFontSize.superLarge),
+                  );
                 }
 
                 _counter++;

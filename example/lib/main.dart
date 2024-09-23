@@ -62,8 +62,9 @@ class _MyHomePageState extends State<MyHomePage> with ChatUIKitThemeState {
                   // 3. Use ChatUIKitTheme.instance to set font or color
                   ChatUIKitTheme.instance.setFont(
                       ChatUIKitFont.fontSize(ChatUIKitFontSize.normal));
-                  ChatUIKitTheme.instance
-                      .setColor(ChatUIKitColor.light(primaryHue: 203));
+                  ChatUIKitTheme.instance.setColor(
+                    ChatUIKitColor.light(primaryHue: 203),
+                  );
                 } else {
                   // 3. Use ChatUIKitTheme.instance to set font or color
                   ChatUIKitTheme.instance.setFont(
