@@ -1,3 +1,7 @@
+## 1.0.0
+
+- add set font and color methods.
+
 ## 0.0.9
 
 - add default theme.
