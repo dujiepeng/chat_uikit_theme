@@ -1,6 +1,7 @@
-## 1.0.1
+## 1.0.4
 
 - add set font and color methods.
+- add ChatUIKitThemeMixin.
 
 ## 0.0.9
 

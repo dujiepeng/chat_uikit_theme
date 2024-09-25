@@ -1,5 +1,5 @@
 import 'package:chat_uikit_theme/chat_uikit_theme.dart';
-import 'package:chat_uikit_theme/chat_uikit_theme_state.dart';
+
 import 'package:flutter/material.dart';
 
 class NextWidget extends StatefulWidget {
@@ -9,7 +9,7 @@ class NextWidget extends StatefulWidget {
   State<NextWidget> createState() => _NextWidgetState();
 }
 
-class _NextWidgetState extends State<NextWidget> with ChatUIKitThemeState {
+class _NextWidgetState extends State<NextWidget> with ChatUIKitThemeMixin {
   int _counter = 0;
   @override
   Widget themeBuilder(BuildContext context, ChatUIKitTheme theme) {

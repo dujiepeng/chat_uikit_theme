@@ -1,5 +1,5 @@
 import 'package:chat_uikit_theme/chat_uikit_theme.dart';
-import 'package:chat_uikit_theme/chat_uikit_theme_state.dart';
+
 import 'package:example/next_widget.dart';
 
 import 'package:flutter/material.dart';
@@ -35,7 +35,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 // 1. "with" ChatUIKitThemeState when you want use ChatUIKitTheme
-class _MyHomePageState extends State<MyHomePage> with ChatUIKitThemeState {
+class _MyHomePageState extends State<MyHomePage> with ChatUIKitThemeMixin {
   int _counter = 0;
 
 // 2. Use themeBuilder to wrap your widget. when use themeBuilder, no need override build method

@@ -37,6 +37,7 @@ class ChatUIKitFont {
   final TextStyle bodyMedium;
   final TextStyle bodySmall;
   final TextStyle bodyExtraSmall;
+  final ChatUIKitFontSize fontSize;
 
   ChatUIKitFont({
     TextStyle? headlineLarge,
@@ -53,6 +54,7 @@ class ChatUIKitFont {
     TextStyle? bodyMedium,
     TextStyle? bodySmall,
     TextStyle? bodyExtraSmall,
+    this.fontSize = ChatUIKitFontSize.normal,
   })  : headlineLarge = headlineLarge ??
             const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
         headlineMedium = headlineMedium ??
@@ -83,7 +85,7 @@ class ChatUIKitFont {
             const TextStyle(fontSize: 11, fontWeight: FontWeight.w400);
 
   ChatUIKitFont.fontSize([
-    ChatUIKitFontSize fontSize = ChatUIKitFontSize.normal,
+    this.fontSize = ChatUIKitFontSize.normal,
   ])  : headlineLarge = TextStyle(
             fontSize: 20 + fontSize.getSize, fontWeight: FontWeight.w600),
         headlineMedium = TextStyle(

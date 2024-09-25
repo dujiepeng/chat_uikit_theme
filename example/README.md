@@ -2,10 +2,10 @@
 
 ## Getting Started
 
-1. If you want to use a theme, you need to implement `ChatUIKitThemeState`
+1. If you want to use a theme, you need to implement `ChatUIKitThemeMixin`
 
 ```dart
-class _NextWidgetState extends State<NextWidget> with ChatUIKitThemeState {}
+class _NextWidgetState extends State<NextWidget> with ChatUIKitThemeMixin {}
 ```
 
 2. override `themeBuilder` method
